@@ -5,18 +5,19 @@ on:
 
 jobs:
   e2e-tests:
-
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/checkout@v4
+      - name: Node version
+        run: node --version
 
-    - name: Node version
-      run: node --version
+      - name: Instalando dependências
+        run: npm install
 
-    - name: Instalando dependências
-      run: npm install
+      - name: Corrigindo permissões do Cypress
+        run: chmod +x ./node_modules/.bin/cypress
 
-    - name: Executando os testes
-      run: npx cypress run
+      - name: Executando os testes
+        run: npx cypress run
