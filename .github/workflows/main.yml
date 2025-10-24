@@ -26,7 +26,7 @@ jobs:
         run: npx cypress run
 
       - uses: actions/upload-artifact@v4
-        if: ${{ !canceleed() }}
+        if: ${{ !cancelled() }}
         with:
           name: test-artifacts
           path: |
