@@ -19,5 +19,8 @@ jobs:
       - name: Corrigindo permissões do Cypress
         run: chmod +x ./node_modules/.bin/cypress
 
+      - name: Instalando binário do Cypress
+        run: npx cypress install
+
       - name: Executando os testes
         run: npx cypress run
