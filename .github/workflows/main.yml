@@ -30,7 +30,8 @@ jobs:
         with:
           name: test-artifacts
           path: |
-            cypress/reports
+            cypress/reports/html
+            cypress/reports/html/**
             cypress/screenshots
             cypress/videos
 
