@@ -42,7 +42,7 @@ describe('Automation Tests', () => {
   });
 
 
-  it('Teste 2: Faça login no usuário com e-mail e senha corretos', () => {
+  it('Teste 2: Fazer login do usuário com e-mail e senha corretos', () => {
     login.login('qa-tester-1759530219181@test.com', '12345');
     login.assertLoggedIn('QA Tester');
     cy.get('a[href="/logout"]').should('be.visible');
@@ -56,7 +56,7 @@ describe('Automation Tests', () => {
   });
 
 
-  it('Teste 3: Fazer login no usuário com e-mail e senha incorretos', () => {
+  it('Teste 3: Fazer login do usuário com e-mail e senha incorretos', () => {
     cy.get('[data-qa="login-email"]').type('qa-tester-1759530219181@test.com');
     cy.get('[data-qa="login-password"]').type('99754321');
 
@@ -120,13 +120,13 @@ describe('Automation Tests', () => {
   });
 
 
-  it('Teste 10: Verify Subscription in home page', () => {
+  it('Teste 10: Verificar assinatura na página inicial', () => {
     login.login('qa-tester-1759530219181@test.com', '12345');
     produtos.subscribe('teste@teste.com');
   });
 
 
-  it('Teste 15: Faça o pedido: Registre-se antes de finalizar a compra', () => {
+  it('Teste 15: Fazer um pedido: Registrar-se antes de finalizar a compra', () => {
     const timestamp = new Date().getTime();
     const firstName = faker.person.firstName();
     const lastName = faker.person.lastName();
